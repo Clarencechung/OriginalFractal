@@ -1,17 +1,17 @@
-
 public void setup()
 {
  size(500,500);
- background(0);
- cir(250,250,250);
+ background(0); 
+ drawCircle(250,250,250);
 }
 
-public void cir(int x, int y, int siz) {
+public void drawCircle(int x, int y, int siz) {
+  strokeWeight(2);
   ellipse(x, y, siz, siz);
   if(siz > 10) {
-    cir(x + siz/2, y, siz/2);
-    cir(x - siz/2, y, siz/2);
-    cir(x, y + siz/2, siz/2);
-    cir(x, y - siz/2, siz/2);
+    drawCircle(x + siz/2, y, siz/2);
+    drawCircle(x - siz/2, y, siz/2);
+    drawCircle(x, y + siz/2, siz/2);
+    drawCircle(x, y - siz/2, siz/2);
   }
 }
