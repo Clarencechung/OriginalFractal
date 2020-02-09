@@ -1,35 +1,17 @@
 
 public void setup()
 {
- size(600,600);
+ size(500,500);
  background(0);
- ring(300,300,180);
+ drawCircle(250,250,250);
 }
 
-public void ring(int x, int y, int len)
-{
- if (len <5)
- {
-   // noFill();
-   ellipse(x, y, 0, 0);
- }
-
- else
- {
-  // fill(0);
-  fill(random(0,255),random(0,255),random(0,255));
-  // strokeWeight(1);
-  noStroke();
-  // stroke(random(0,255),random(0,255),random(0,255));
-  ellipse(x,y,len,len);
-  ring(x-len, y ,len/2);
-  ring(x+len, y, len/2);
-  ring(x+2*len, y, len/2);
-  ring(x-2*len, y, len/2);
-  ring(x+len, y+len, len/2);
-  ring(x-len, y-len, len/2);
-  ring(x-len, y+len, len/2);
-  ring(x+len, y-len, len/2);
- }
+public void drawCircle(int x, int y, int siz) {
+  ellipse(x, y, siz, siz);
+  if(siz > 10) {
+    drawCircle(x + siz/2, y, siz/2);
+    drawCircle(x - siz/2, y, siz/2);
+    drawCircle(x, y + siz/2, siz/2);
+    drawCircle(x, y - siz/2, siz/2);
+  }
 }
-
